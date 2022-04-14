@@ -9,7 +9,7 @@ export const Navbar = () => {
 			</Link>
 			<div className="ml-auto">
 				<Link to="/demo">
-					<button className="nav-item dropdown-toggle btn btn-warning" style={{marginRight: "25px" }}>Favorites</button>
+					<button className="nav-item dropdown-toggle btn btn-warning" style={{marginRight: "25px" }}>Favourites</button>
 					
 				</Link>
 			</div>

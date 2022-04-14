@@ -1,7 +1,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			characters: []
+			characters: [],
+			gender: [],
+			haircolor: [],
+			eyecolor: [],
 			
 		},
 
