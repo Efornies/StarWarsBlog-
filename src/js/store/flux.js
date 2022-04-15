@@ -2,9 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			characters: [],
-			gender: [],
-			haircolor: [],
-			eyecolor: [],
+			singlecharacter: [],
 			
 		},
 
@@ -14,7 +12,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const data = await response.json()
 				setStore({characters: data.results})
 				
+			},
+			
+			getSingleCharacter: async (key)=>{
+				const response = await  fetch(`https://www.swapi.tech/api/people/`+key)
+				const gettedcharacter = await response.json();
+				setStore({singlecharacter: gettedcharacter.result.properties})				
 			}
+
 
 		}
 	};

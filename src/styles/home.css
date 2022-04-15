@@ -3,7 +3,13 @@
     padding-top: 15px;
     margin: 10px;
     border-radius: 15px;
+    min-height: 300px;
+    min-width: 300px;
+    margin-right: 5px;
+    
 }
+
+
 
 .card-text {
     padding-top: 12px;
