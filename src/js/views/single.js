@@ -6,17 +6,29 @@ import { Context } from "../store/appContext";
 export const Single = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+
+	useEffect(()=>{
+		actions.getOneCharacter(params.theid);
+	}, [])
+
 	return (
-		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
-
-			<hr className="my-4" />
-
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
-				</span>
-			</Link>
+		<div className="container">
+            <div className="row">
+                <div className="col-6">
+                <img id="planetPic" src="https://i0.wp.com/hipertextual.com/wp-content/uploads/2021/03/star_wars_4_una_nueva_esperanza_george_lucas.jpg?resize=1200%2C800&quality=50&strip=all&ssl=1" alt="planet"/>
+                </div>
+                <div className="col-6">
+                <h3>{store.info.name}</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a placerat magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus eu tortor congue, viverra lectus non, imperdiet est. Nullam eget dolor et lacus bibendum lobortis et eget neque. Donec consequat ante eget sem imperdiet tristique. Aliquam in nisl sed sapien aliquet interdum. Cras id consectetur lacus.</p>
+                </div> 
+            </div>
+            <div className="row mt-3">
+                <p className="col-3 planetProp border border-danger ">Climate: {store.info.climate}</p>
+                <p className="col-3 planetProp border border-danger">Terrain: {store.info.terrain}</p>
+                <p className="col-3 planetProp border border-danger">Diameter: {store.info.diameter}</p>
+                <p className="col-3 planetProp border border-danger">Population: {store.info.population}</p>
+            </div>
+            
 		</div>
 	);
 };
