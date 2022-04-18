@@ -2,7 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			planets: [],
-			info: {}
+			info: {},
+			favorite: []
 	
 		},
 		actions: {
@@ -12,13 +13,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({planets: data.results})
 			},
 
-			getOnePlanet: async () => {
-				const response = await fetch("https://www.swapi.tech/api/planets/");
+			getOnePlanet: async (id) => {
+				const response = await fetch(`https://www.swapi.tech/api/planets/${id}`);
 				const data = await response.json();
 				console.log(data);
 				setStore({info: data.result.properties})
-			}
+			},
 
+			addFav: (item) => {
+				const store = getStore();
+				const newFav = store.favorite.concat(item)
+				setStore({favorite : newFav})
+
+			}
+			
 			}
 		}
 	};

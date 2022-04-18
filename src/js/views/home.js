@@ -1,10 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 export const Home = () => {
 	const {store, actions} = useContext(Context);
+	
 
 	useEffect(() => {
 		actions.getPlanets()
@@ -23,7 +24,9 @@ export const Home = () => {
 								<Link to={"/single/" + planet.uid}>
 									<button className="btn btn-outline-warning">Learn More</button>
 								</Link>
-									<button href="#" className="btn btn-outline-danger favButton"><i className="fa-regular fa-heart"></i></button>
+									<button href="#" className="btn btn-outline-danger favButton" onClick={() => {
+										actions.addFav(planet.name)
+									}}><i className="fa-regular fa-heart"></i></button>
 							</div>
 						</div>
 				})}

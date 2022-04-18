@@ -5,10 +5,10 @@ import { Context } from "../store/appContext";
 
 export const Single = props => {
 	const { store, actions } = useContext(Context);
-	const params = useParams();
+	const {id} = useParams();
 
-	useEffect(()=>{
-		actions.getOneCharacter(params.theid);
+    useEffect(() => {
+		actions.getOnePlanet(id)
 	}, [])
 
 	return (
@@ -29,6 +29,9 @@ export const Single = props => {
                 <p className="col-3 planetProp border border-danger">Population: {store.info.population}</p>
             </div>
             
+            <Link to ="/">
+                <button className="btn btn-outline-primary homeButton mx-auto">Back to Home</button>
+            </Link>
 		</div>
 	);
 };
