@@ -5,10 +5,16 @@ import { Context } from "../store/appContext";
 
 export const Single = () => {
 	const { store, actions } = useContext(Context);
-	const { theid } = useParams();
+	const { uid } = useParams();
   
 	 useEffect(() => {
-	 actions.getOneCharacter(theid);
+	 actions.getSingleCharacter(uid);
 	}, []);
+
+	return (
+
+	
+		<div> {store.singlecharacter.gender} </div>
+	)
 
 }

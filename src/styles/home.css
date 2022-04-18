@@ -9,6 +9,10 @@
     
 }
 
+.container-fluid  {
+    overflow-x: scroll;
+}
+
 
 
 .card-text {
