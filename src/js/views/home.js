@@ -8,14 +8,10 @@ import { Link } from "react-router-dom";
 export const Home = () => {
 	const {store, actions} = useContext(Context);
 
-	const { uid } = useParams()
-
 	useEffect(() => {
 		actions.getCharacters()
 		
 		}, []);
-
-
 
 	return (
 
@@ -27,10 +23,11 @@ export const Home = () => {
 				        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png" className="card-img-top" alt="..."/>
 						<div className="card-body">
 				  		<h5 className="card-title">{character.name}</h5>
-				  		
-						  <Link to = {"single/" + character.uid}> 
+				  		 <Link to = {"single/" + character.uid}> 
 				 		 <button className="btn btn-warning" style={{marginRight:"90px"}}> More Info</button></Link>
-						  <a href="#" className="btn btn-warning"> <AiOutlineHeart /> </a>
+						  <button href="#" className="btn btn-warning" onClick={() => {
+										actions.addtoFavs(character.name)
+									}}> <AiOutlineHeart /> </button>
 							
 						</div>
 			  		</div>
