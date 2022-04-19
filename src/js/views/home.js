@@ -14,9 +14,9 @@ export const Home = () => {
 	return (
 		<div className="container">
 			<h2>Planets</h2>
-			<div className="row">
+			<div className="home row flex-nowrap">
 				{store.planets.map((planet) => {
-					return <div key={planet.uid} className="card" style={{width:"18rem"}}>
+					return <div key={planet.uid} className="card">
 							<img className="card-img-top" src="https://i0.wp.com/hipertextual.com/wp-content/uploads/2021/03/star_wars_4_una_nueva_esperanza_george_lucas.jpg?resize=1200%2C800&quality=50&strip=all&ssl=1" alt="Card image cap"/>
 							<div className="card-body">
 								<h5 className="card-title">{planet.name}</h5>

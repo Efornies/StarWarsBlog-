@@ -18,3 +18,13 @@
     font-size: 20px;
 }
 
+.home{
+    display: flex;
+    overflow-x: scroll;
+    
+}
+
+.card{
+    margin-right: 15px;
+    width: 18rem;
+}

@@ -26,7 +26,7 @@ export const Navbar = () => {
                 {store.favorite.map((e, i) => {
                   return (
                     <li key = {i}>
-                      <p className="dropdown-item">{e}</p>
+                      <div className="dropdown-item">{e}</div> 
                     </li>
                   );
                 })

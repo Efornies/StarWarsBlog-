@@ -20,15 +20,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({info: data.result.properties})
 			},
 
-			addFav: (item) => {
+			addFav: (name) => {
 				const store = getStore();
-				const newFav = store.favorite.concat(item)
-				setStore({favorite : newFav})
-
+				if(!store.favorite.includes(name)){
+					setStore({favorite : [...store.favorite, name]})
+				}
+				else {
+						setStore({favorite : store.favorite.filter((item) => item != name )})
+					}
+				}
 			}
 			
 			}
 		}
-	};
 
 export default getState;
