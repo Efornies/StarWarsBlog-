@@ -27,9 +27,7 @@ export const Home = () => {
 				        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png" className="card-img-top" alt="..."/>
 						<div className="card-body">
 				  		<h5 className="card-title">{character.name}</h5>
-				  		<div className="card-text"> <p> Gender: {character.description} </p> 
-						  <p>Hair color: {character.hair_color} </p>
-						  <p>Eye-color: {character.eye_color} </p></div>
+				  		
 						  <Link to = {"single/" + character.uid}> 
 				 		 <button className="btn btn-warning" style={{marginRight:"90px"}}> More Info</button></Link>
 						  <a href="#" className="btn btn-warning"> <AiOutlineHeart /> </a>
