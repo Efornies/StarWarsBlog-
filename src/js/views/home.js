@@ -26,7 +26,7 @@ export const Home = () => {
 				  		 <Link to = {"single/" + character.uid}> 
 				 		 <button className="btn btn-warning" style={{marginRight:"90px"}}> More Info</button></Link>
 						  <button href="#" className="btn btn-warning" onClick={() => {
-										actions.addtoFavs(character.name)
+										actions.addToFavs(character.name)
 									}}> <AiOutlineHeart /> </button>
 							
 						</div>
