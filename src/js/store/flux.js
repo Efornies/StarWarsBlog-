@@ -1,27 +1,26 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			characters:[],
-			singlecharacter:[],
+			onestarship:[],
+			vehicles:[],
+			favourites:[]
 		},
-
 		actions: {
-			getCharacters: async () => {
-				const response = await fetch ("https://www.swapi.tech/api/people");
-				const data = await response.json()
-				setStore({characters: data.results})
-				
+
+			getVehicles: async ()=>{
+				const response = await fetch( "https://www.swapi.tech/api/starships")
+				const gettedstarships = await response.json()
+				setStore({vehicles: gettedstarships.results})
 			},
-			
-			getSingleCharacter: async (uid)=>{
-				const response = await  fetch(`https://www.swapi.tech/api/people/${uid}`)
-				const gettedcharacter = await response.json();
-				setStore({singlecharacter: gettedcharacter.result.properties})				
+
+			},
+			getOneStarship: async (key)=>{
+				const response = await fetch("https://www.swapi.tech/api/starships/"+key)
+				const gettedstarship = await response.json(); 
+				setStore({onestarship:gettedstarship.result.properties})
 			}
-
-
+			
 		}
 	};
-};
 
 export default getState;
